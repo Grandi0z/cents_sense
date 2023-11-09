@@ -1,22 +1,7 @@
 class UsersController < ApplicationController
-  def new
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def edit
-  end
-
-  def destroy
-  end
-
-  def index
-  end
-
+  # load_and_authorize_resource
   def show
+    @user = current_user
+    @expense_categories = @user.expense_categories
   end
 end
