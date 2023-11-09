@@ -1,0 +1,16 @@
+<div>
+    <h1 class="logo">Cents sense</h1>
+    <ul class='home_list'>
+        <li>
+            <%=link_to "Log in", 
+                new_session_path(resource_name),
+                class:"btn btn-success"%>
+        </li>
+        <li>
+            <%=link_to "Sign up",
+                new_registration_path(resource_name),
+                class:"btn btn-info"%>
+        </li>
+    </ul>
+</div>
+
