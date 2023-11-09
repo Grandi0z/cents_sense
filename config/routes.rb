@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'splash/home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -6,16 +7,16 @@ Rails.application.routes.draw do
   devise_for :users
   devise_scope :user do
     authenticated :user do
-      root to: "users#index", as: :authenticated_root
+      root to: "users#show", as: :authenticated_root
     end
 
     unauthenticated do
-      root to: "devise/sessions#new", as: :unauthenticated_root
+      root to: "devise/sessions#home", as: :unauthenticated_root
     end
   end
 
   scope "/" do
-    resources :users do
+    resources :users, only: :show do
       resources :expense_categories do
         resources :expenses
       end

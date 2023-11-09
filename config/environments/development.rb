@@ -1,6 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  #active storage
+  config.active_storage.service = :disk
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -69,5 +71,11 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   #Devise config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #letter opener
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
+
 
 end
