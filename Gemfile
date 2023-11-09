@@ -81,16 +81,13 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-
 gem 'cancancan'
-
 
 gem 'cssbundling-rails'
 
 gem 'bootstrap_form', '~> 5.4'
 
 gem 'sassc'
-
 
 gem 'devise', '~> 4.9'
 
