@@ -100,4 +100,4 @@ gem 'carrierwave', '~> 3.0'
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
-I want deploy my ror project, it uses Active storage to store pictures , how can I make configurations if I want it to store picture on a free service like MEGA
+gem 'activestorage-mega'
