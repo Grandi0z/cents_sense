@@ -10,6 +10,12 @@ disk:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
+mega:
+  service: Mega
+  email: "josephlkausi@gmail.com"
+  password: "5e8ehx6WFBh_.j."
+
+
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
