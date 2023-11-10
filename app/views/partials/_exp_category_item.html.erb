@@ -1,0 +1,21 @@
+<div class="card mb-3">
+  <div class="row g-0 body_card" >
+    <div class="col-md-4">
+      <%if exp_category.icon.attached?%>
+        <%= image_tag exp_category.icon, 
+                  alt: "recipe", width: "100%", 
+                  height: "80%", class:'recipe_food p-0', 
+                  style:'object-fit: contain;' %>
+      <%else%>
+        <%=image_tag exp_category.icon.attachment%>
+      <%end%>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p><%=exp_category.name%></p>
+        <em><%=total_expense_amount(exp_category.expenses)%>$</em>
+      </div>
+      <em class="last_update_category"><%=remove_utc(exp_category.updated_at)%></em>
+    </div>
+  </div>
+</div>

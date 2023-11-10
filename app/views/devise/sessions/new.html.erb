@@ -1,0 +1,26 @@
+<% content_for :navbar do %>
+  <div id = "header">
+       <%= render partial:"partials/navbar", locals:{array:[{'Log in' => '#'},{'Sign up'=>new_user_registration_path}], back:unauthenticated_root_path}%>
+    </div>
+<% end %>
+<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", skip_label: true, placeholder: "Email" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "current-password", skip_label: true, placeholder: "Password" %>
+    </div>
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.hidden_field :remember_me, value: true %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Forgot your password?", 
+      new_password_path(resource_name), 
+      style:'color: darkgray; margin: auto;' %><br />
+  <div class="actions">
+    <%= f.submit "Log in", class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>
