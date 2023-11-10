@@ -1,7 +1,7 @@
 databases:
-  - name: cents_sense
-    databaseName: cents_sense
-    user: cents_sense
+  - name: database_cents_sense
+    databaseName: database_cents_sense
+    user: database_cents_sense_user
 services:
   - type: web
     name: cents_sense
