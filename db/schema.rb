@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_08_155202) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_10_183709) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,18 +47,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_155202) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_expense_categories_on_user_id"
   end
 
   create_table "expenses", force: :cascade do |t|
     t.integer "author_id"
-    t.integer "expense_category_id"
+    t.integer "category_expense_id"
     t.string "name"
     t.decimal "amount", precision: 10, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "expense_category_id", null: false
     t.index ["author_id"], name: "index_expenses_on_author_id"
+    t.index ["category_expense_id"], name: "index_expenses_on_category_expense_id"
     t.index ["expense_category_id"], name: "index_expenses_on_expense_category_id"
   end
 
@@ -83,6 +85,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_08_155202) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "expense_categories", "users"
   add_foreign_key "expenses", "expense_categories"
-  add_foreign_key "expenses", "expense_categories", on_delete: :cascade
+  add_foreign_key "expenses", "expense_categories", column: "category_expense_id", on_delete: :cascade
   add_foreign_key "expenses", "users", column: "author_id", on_delete: :cascade
 end
