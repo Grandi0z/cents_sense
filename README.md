@@ -56,7 +56,7 @@
 - **It is a mobile web application that you can access from any device with a browser, without the need of installing anything**
 
 ## 🚀 Live Demo 
-<a name="live-demo" href="">Demo</a>
+<a name="live-demo" href="https://cents-sense.onrender.com/">Demo</a>
 
 ## 🚀 Video Demo 
 <a name="video-demo" href="https://www.loom.com/share/2e8dec528290409cbf1cc6afc525199b?sid=f3a400e4-4104-46d1-b3d5-665402286f59">Video Demo</a>
