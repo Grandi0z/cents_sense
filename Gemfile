@@ -78,7 +78,12 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'rubocop', '>= 1.0', '< 2.0'
-  gem 'selenium-webdriver'
+
+  gem 'webdrivers'
+
+  gem 'database_cleaner'
+
+  gem 'faker'
 end
 
 gem 'cancancan'

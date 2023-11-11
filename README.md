@@ -14,6 +14,8 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo](#-live-demo)
+  - [🚀 Video Demo](#-video-demo)
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -52,6 +54,12 @@
 - **It shows you the total amount of money spent on each category, and the percentage of your budget that each category represents, so that you can see how you allocate your money and where you can save more.**
 - **It provides you with a simple and user-friendly interface, with a splash screen, a home page, and a transactions page, that follow the design guidelines of Snapscan, a popular mobile payment app**
 - **It is a mobile web application that you can access from any device with a browser, without the need of installing anything**
+
+## 🚀 Live Demo 
+<a name="live-demo" href="">Demo</a>
+
+## 🚀 Video Demo 
+<a name="video-demo" href="https://www.loom.com/share/2e8dec528290409cbf1cc6afc525199b?sid=f3a400e4-4104-46d1-b3d5-665402286f59">Video Demo</a>
 
 ## Getting Started
 

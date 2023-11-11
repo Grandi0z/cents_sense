@@ -6,6 +6,7 @@ class ExpenseCategoriesController < ApplicationController
 
   def create
     @expense_category = @user.expense_categories.new(expense_category_params)
+    @expense_category.user = @user
     if @expense_category.save
       flash[:success] = ' Category created '
       redirect_to user_path(@user)

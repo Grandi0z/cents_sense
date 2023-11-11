@@ -8,7 +8,7 @@
         </div>
     <% end %>
     <ul class="list_categories">
-      <%@expense_categories.each_with_index do |exp_category|%>
+      <%@expense_categories.each do |exp_category|%>
        <li>
         <%=link_to user_expense_category_path(exp_category.user_id, exp_category) do %>
         <%=render partial:"partials/exp_category_item",
