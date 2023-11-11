@@ -99,5 +99,3 @@ gem 'devise', '~> 4.9'
 gem 'carrierwave', '~> 3.0'
 
 gem 'bootstrap-sass', '~> 3.4.1'
-
-gem 'activestorage-mega'
