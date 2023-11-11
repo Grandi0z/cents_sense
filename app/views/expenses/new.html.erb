@@ -1,0 +1,31 @@
+<div class='container'>
+    <% content_for :navbar do %>
+    <div id = "header">
+        <%= render partial:"partials/navbar", locals:{array:[{'NEW EXPENSE' => '#'},{'  '=>''}], back: user_expense_category_path(@user, @expense_category)}%>
+        </div>
+    <% end %>
+
+<%= bootstrap_form_for(@expense, url: user_expense_category_expenses_path(@user, @expense_category)) do |f| %>
+<div>
+  <div class="field">
+    <%= f.text_field :name, autofocus: true, 
+     autocomplete: "name", 
+     skip_label: true, 
+     placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%=  f.number_field :amount, 
+     step: 0.1,
+     skip_label: true, 
+     placeholder: "amount" %>
+  </div>
+</div>
+  
+
+  <div class="actions">
+    <%= f.submit "Add expense", class:'btn btn-outline-primary' %>
+  </div>
+<% end %>
+</div>
+
+<%= render partial: "partials/errors", locals: { errors: @expense.errors } %>

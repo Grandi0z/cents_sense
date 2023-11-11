@@ -1,0 +1,14 @@
+<div class="card mb-3">
+  <div class="row g-0 body_card" >
+    <div class="col-md-4 col_expense_name">
+      <h3 style="margin:0"><%=expense.name%></h3>
+      <em class="last_update_category"><%=remove_utc(expense.created_at)%></em>
+    </div>
+    <div class="col-md-8 col_expense_amount">
+      <div class="card-body">
+        <p></p>
+        <em><%=expense.amount%>$</em>
+      </div>
+    </div>
+  </div>
+</div>
