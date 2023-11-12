@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe "Visit the show page of a user's expense category", type: :feature do
-  # Logged in before running the tests
   before do
     user = FactoryBot.create(:user)
     login_as(user)
