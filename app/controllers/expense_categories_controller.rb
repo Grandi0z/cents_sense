@@ -6,11 +6,22 @@ class ExpenseCategoriesController < ApplicationController
 
   def create
     @expense_category = @user.expense_categories.new(expense_category_params)
+    @expense_category.user = @user
     if @expense_category.save
       flash[:success] = ' Category created '
       redirect_to user_path(@user)
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @expense_category = @user.expense_categories.find(params[:id])
+    if @expense_category.update(expense_category_params)
+      flash[:success] = 'Category updated'
+      redirect_to user_path(@user)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -21,6 +32,13 @@ class ExpenseCategoriesController < ApplicationController
   def show
     @current_exp_category = set_current_expense_category
     @expenses = @current_exp_category.expenses.sort_by(&:created_at).reverse
+  end
+
+  def destroy
+    @expense_category = @user.expense_categories.find(params[:id])
+    @expense_category.destroy
+    flash[:success] = 'Category deleted'
+    redirect_to user_path(@user)
   end
 
   private
