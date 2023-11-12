@@ -1,5 +1,4 @@
 module ApplicationHelper
-  # app/helpers/application_helper.rb
   def navbar_links(links)
     html = ''
     links.each do |link|
