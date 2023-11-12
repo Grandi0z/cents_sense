@@ -15,29 +15,30 @@ class ExpenseCategoriesController < ApplicationController
     end
   end
 
-  def update 
-    @expense_category = @user.expense_categories.find(params[:id]) 
-    if @expense_category.update(expense_category_params) 
-      flash[:success] = 'Category updated' 
-      redirect_to user_path(@user) 
-    else render :edit, status: :unprocessable_entity 
-    end 
+  def update
+    @expense_category = @user.expense_categories.find(params[:id])
+    if @expense_category.update(expense_category_params)
+      flash[:success] = 'Category updated'
+      redirect_to user_path(@user)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def index
     @expense_categories = @user.expense_categories
   end
- redirect_to user_path(@user) else render :edi
+
   def show
     @current_exp_category = set_current_expense_category
     @expenses = @current_exp_category.expenses.sort_by(&:created_at).reverse
   end
 
-  def destroy 
-    @expense_category = @user.expense_categories.find(params[:id]) 
-    @expense_category.destroy 
-    flash[:success] = 'Category deleted' 
-    redirect_to user_path(@user) 
+  def destroy
+    @expense_category = @user.expense_categories.find(params[:id])
+    @expense_category.destroy
+    flash[:success] = 'Category deleted'
+    redirect_to user_path(@user)
   end
 
   private
